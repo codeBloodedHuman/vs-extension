@@ -1,0 +1,147 @@
+{
+  "name": "test-extension",
+  "displayName": "Test Extension",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:test-extension.jsonPlaceholderPaste"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "test-extension.readBlog",
+        "title": "Read Blogs"
+      },
+      {
+        "command": "test-extension.sayHello",
+        "title": "Say Hello"
+      },
+      {
+        "command": "test-extension.showDate",
+        "title": "Show Date"
+      },
+      {
+        "command": "test-extension.customCommand",
+        "title": "Custom Command"
+      },
+      {
+        "command": "test-extension.jsonPlaceholderPaste",
+        "title": "Json Placeholder"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "test-extension.readBlog",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "test-extension.sayHello",
+        "key": "ctrl+alt+h",
+        "mac": "cmd+alt+h",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "test-extension.showDate",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "test-extension.customCommand",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "test-extension.jsonPlaceholderPaste",
+        "key": "ctrl+alt+j",
+        "mac": "cmd+alt+j",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "test-extension.readBlog",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.sayHello",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.showDate",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.customCommand",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.jsonPlaceholderPaste",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "test-extension.readBlog",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.sayHello",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.showDate",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.customCommand",
+          "group": "navigation"
+        },
+        {
+          "command": "test-extension.jsonPlaceholderPaste",
+          "group": "navigation"
+        }
+      ]
+    },
+    "activitybar": [
+      {
+        "id": "get_json",
+        "title": "GET JSON",
+        "icon": "resourse/add.png",
+        "command": "test-extension.jsonPlaceholderPaste"
+      }
+    ]
+    
+  },
+  
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "fast-xml-parser": "^4.3.2"
+  }
+}
